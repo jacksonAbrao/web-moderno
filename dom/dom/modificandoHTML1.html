@@ -9,7 +9,31 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector("body");
+
+        const div1 = document.createElement("div") // essa função cria um elemento
+        div1.classList.add("destaque")
+        div1.innerHTML = "primeiro"
+
+        const div2 = document.createElement("div")
+        div2.setAttribute("wm-atributo", "valor")
+        div2.innerHTML = "segundo"
+
+        const p = document.createElement("p")
+        p.innerHTML = "Terceiro"
+        const div3 = document.createElement("div")
+        div3.appendChild(p)
+
+        body.appendChild(div1) // essa função inclui filhos dentro de um elemento x, sempre na ultima posição
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode("Antes...")
+        div3.insertBefore(texto, div3.childNodes[0]) // essa função inclui filhos, na posição que vc definir
+
+        const div4 = div3.cloneNode(true)
+        body.appendChild(div4)
+        body.removeChild(div3)
     </script>
 </body>
 
