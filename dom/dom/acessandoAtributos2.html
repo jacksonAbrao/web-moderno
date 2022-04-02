@@ -17,7 +17,15 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector("div ul [destino='escritorio']")
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) // não vai pegar, pq o destino não é um atributo nativa do js e sim personalizada
+        console.log('getAttribute', lista.getAttribute('destino')) // assim pega, pq especifica que tá procurando um atributo destino
+        console.log('hasAttribut', lista.hasAttribute("destino"))
+        lista.setAttribute("destino", "empresa") // seta outro value para esse atributo
+        lista.setAttribute("status", "aberto") // cria outro atributo, e seta um valor para ele
+        lista.removeAttribute("destino") // remove esse atributo especifico
+        console.log(lista.dataset) //pega todos os atributos data
     </script>
 </body>
 
